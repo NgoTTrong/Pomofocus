@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+    margin: 0 10px;
+}
+html{
+    font-size: 100px;
+}
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.nav_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: solid 2px black;
+}
+.nav_container .title_container i{
+    color: black;
+    font-size: 0.4rem;
+}
+.nav_container .title_container span{
+    font-size: 0.6rem;
+    font-family: monospace;
+    color: black;
+}
+.nav_container .item_container{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.nav_container .item_container .setting{
+    width: 1rem;
+    height: 0.4rem;
+    font-size: 0.2rem;
+    color: black;
+    text-align: center;
+    font-family: monospace;
+    padding: 7px 0px;
+    border: solid 2px rgb(214, 195, 212);
+    border-radius: 0.1rem;
+}
+.nav_container .item_container .setting:hover{
+    background-color: rgb(214, 195, 212);
+}
+.nav_container .item_container .login{
+    width: 1rem;
+    height: 0.4rem;
+    font-size: 0.2rem;
+    color: black;
+    text-align: center;
+    padding: 7px 0px;
+    font-family: monospace;
+    border: solid 2px black;
+    border: solid 2px rgb(214, 195, 212);
+    border-radius: 0.1rem;
+}
+.nav_container .item_container .login:hover{
+    background-color: rgb(214, 195, 212);
+}
+
+.main_container{
+    background-color: none;
+    margin: 0.4rem 4rem;
+    padding: 0.2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    border: solid rgb(27, 25, 25) 3px;
+    border-radius: 0.2rem;
+}
+.main_container .selector{
+    margin-top: 2px;
+    border-bottom: solid black 2px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.2rem 0;
+}
+.main_container .selector div{
+    color: black;
+    width: 1.5rem;
+    height: 0.4rem;
+    font-size: 0.2rem;
+    text-align: center;
+    padding: 0.1rem 0px;
+    font-family: monospace;
+    border-radius: 0.1rem;
+}
+.main_container .selector div:hover{
+    opacity: 0.6;
+    border-radius: 0.1rem;
+}
+.main_container .timer_container{
+    margin-bottom: 0.2rem;
+    font-family: monospace;
+    color: black;
+}
+.main_container .btn{
+    width: 3rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.4rem;
+    font-family: monospace;
+    background-color: transparent;
+}
+.task_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.task_container span{
+    font-size: 0.5rem;
+    font-family: monospace;
+}
+.task_container .task_box{
+    width: 5rem;
+    height: 0.6rem;
+    border: black dashed 2px;
+    text-align: center;
+    font-size: 0.35rem;
+    padding-top: 0.05rem;
+    font-family: monospace;
+    margin: 0.2rem 0px;
+}
+.task_container .task_box:hover{
+    opacity: 0.5;
+}
