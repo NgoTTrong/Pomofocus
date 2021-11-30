@@ -14,7 +14,8 @@ let recentStatus = "Pomodoro";
 let minutes = 25;
 let seconds = 0;
 function setPomodoro(){
-    clear();
+    clearInterval(minutesTimer);
+    clearInterval(secondsTimer);
     recentStatus = "Pomodoro";
     button.innerText = "Start";
     setMinutes.innerText = 25;
@@ -26,7 +27,8 @@ function setPomodoro(){
     pomodoro.style.backgroundColor = "pink";
 }
 function setShortBreak(){
-    clear();
+    clearInterval(minutesTimer);
+    clearInterval(secondsTimer);
     recentStatus = "Break";
     button.innerText = "Start";
     setMinutes.innerText = 5;
@@ -38,7 +40,8 @@ function setShortBreak(){
     longBreak.style.removeProperty("background-color");
 }
 function setLongBreak(){    
-    clear();
+    clearInterval(minutesTimer);
+    clearInterval(secondsTimer);
     recentStatus = "Break";
     button.innerText = "Start";
     setMinutes.innerText = 15;
@@ -49,10 +52,7 @@ function setLongBreak(){
     pomodoro.style.removeProperty("background-color");
     shortBreak.style.removeProperty("background-color");
 }
-function clear(){
-    clearInterval(minutesTimer);
-    clearInterval(secondsTimer);
-}
+
 pomodoro.addEventListener("click",setPomodoro);
 shortBreak.addEventListener("click",setShortBreak);
 longBreak.addEventListener("click",setLongBreak);
@@ -67,8 +67,6 @@ startTimer.innerText = "Start to work!";
 startTimer.style.fontFamily = "monospace";
 startTimer.style.fontSize = "0.5rem";
 startTimer.style.color = "white";
-let minutesTimer;
-let secondsTimer;
 button.onclick = function(){
     if (this.innerHTML == "Start"){
         this.innerHTML = "Pause";
@@ -79,12 +77,15 @@ button.onclick = function(){
         runTime();
     }else if(this.innerHTML == "Pause"){
         this.innerHTML = "Resume";
-        clear();
+        clearInterval(minutesTimer);
+        clearInterval(secondsTimer);
     }else{
         this.innerHTML = "Pause";
         runTime();
     }
 }
+let minutesTimer;
+let secondsTimer;
 let runTime = function(){
     minutesTimer = setInterval(function minutesRun(){
         minutes--;
@@ -95,7 +96,8 @@ let runTime = function(){
         setSeconds.innerText = seconds;
         if (seconds<=0){
             if (minutes<=0){
-                clear();
+                clearInterval(minutesTimer);
+                clearInterval(secondsTimer);
                 if (recentStatus == "Pomodoro"){
                     container.appendChild(endTimer);
                 }else{
